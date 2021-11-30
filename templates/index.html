@@ -8,9 +8,14 @@
 </head>
 
 <body>
-	{{ range .Images }}
-		<img src="data:image/jpg;base64,{{ . }}" /><br />
-	{{ end }}
+  {{range $v := .}}
+  <div>
+    <label>{{$v.Name}}</label>
+    <div>
+      <img src="../assets/{{$v.Name}}"/>
+    </div>
+  </div>
+  {{end}}
 </body>
 
 </html>
