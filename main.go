@@ -5,28 +5,11 @@ import (
 	"io/ioutil"
 	"log"
 	"net/http"
-	"strings"
 
 	_ "net/http/pprof"
 
 	"github.com/lucas-clemente/quic-go/http3"
 )
-
-type binds []string
-
-func (b binds) String() string {
-	return strings.Join(b, ",")
-}
-
-func (b *binds) Set(v string) error {
-	*b = strings.Split(v, ",")
-	return nil
-}
-
-// Size is needed by the /demo/upload handler to determine the size of the uploaded file
-type Size interface {
-	Size() int64
-}
 
 func setupHandler() http.Handler {
 	mux := http.NewServeMux()
