@@ -6,8 +6,6 @@ import (
 	"log"
 	"net/http"
 
-	_ "net/http/pprof"
-
 	"github.com/lucas-clemente/quic-go/http3"
 )
 
@@ -30,8 +28,8 @@ func IndexHandler(w http.ResponseWriter, r *http.Request) {
 
 func main() {
 	// 証明書
-	var crtPath = "../live/localhost111919.ml/fullchain.pem"
-	var keyPath = "../live/localhost111919.ml/privkey.pem"
+	var crtPath = "./localhost111919.ml/fullchain.pem"
+	var keyPath = "./localhost111919.ml/privkey.pem"
 
 	// HTTP/3サーバー起動
 	handler := setupHandler()
