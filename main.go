@@ -30,8 +30,8 @@ func IndexHandler(w http.ResponseWriter, r *http.Request) {
 
 func main() {
 	// 証明書
-	var crtPath = "./localhost111919.ml/fullchain.pem"
-	var keyPath = "./localhost111919.ml/privkey.pem"
+	var crtPath = "./localhost19.ml/localhost19.ml.pem"
+	var keyPath = "./localhost19.ml/localhost19.ml-key.pem"
 
 	// HTTP/3サーバー起動
 	handler := setupHandler()

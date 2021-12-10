@@ -12,3 +12,5 @@ services:
     tty: true
     cap_add:
       - NET_ADMIN
+    ports:
+      - "8080:8080"
