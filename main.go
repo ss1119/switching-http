@@ -6,6 +6,8 @@ import (
 	"log"
 	"net/http"
 
+	_ "net/http/pprof"
+
 	"github.com/lucas-clemente/quic-go/http3"
 )
 
