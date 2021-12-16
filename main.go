@@ -35,7 +35,10 @@ func main() {
 
 	// HTTP/3サーバー起動
 	handler := setupHandler()
-	http3.ListenAndServe(":8080", crtPath, keyPath, handler)
+	err := http3.ListenAndServe(":8080", crtPath, keyPath, handler)
+	if err != nil {
+		log.Fatal("ListenAndServe: ", err)
+	}
 
 	// HTTP/2サーバー起動
 	// http.Handle("/assets/", http.StripPrefix("/assets/", http.FileServer(http.Dir("assets/"))))
