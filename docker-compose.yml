@@ -14,3 +14,5 @@ services:
       - NET_ADMIN
     ports:
       - "8080:8080"
+      - "80"
+      - "443"
